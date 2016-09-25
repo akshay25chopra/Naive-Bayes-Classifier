@@ -19,10 +19,6 @@ def getList1():
     List1 = {'spam':0, 'ham':0}
     return List1
 
-def getTempList():
-    tempList = {'spam':0, 'ham':0}
-
-    return tempList
 
 def getCount(argList):
 
@@ -94,15 +90,8 @@ for root, dir, files in os.walk(sys.argv[1]):
 
 
 #print(Dict1)
-probabilityList = {}
-for i in Dict1:
-		finalList=[]
-		tempList=Dict1[i]
 
-		finalList.append((tempList['spam']+1)/float(sCount+len(distinctWords)))
-		finalList.append((tempList['ham']+1)/float(hCount+len(distinctWords)))
-
-		probabilityList[i]=finalList
+addSmoothing()
 
 
 #print(probabilityList)
